@@ -61,13 +61,13 @@ MotionCraft/
 2. Explore `server/src/core` to see the engine and domain models.
 3. Review provider adapters in `server/src/providers` to map payloads for Pika, Runway, Luma, and Kling.
 4. Customize the UI shell in `web/src/pages/index.tsx` to match your workflow.
-5. Enable GitHub Pages with the repository root as the site source so `index.html` loads at `https://<username>.github.io/MotionCraft/`.
+5. Enable GitHub Pages using the `docs/` folder as the site source to publish the landing page.
 
 ---
 
 ## 🌐 GitHub Pages
 
-The repository root now includes `index.html`, a ready-made landing page for GitHub Pages. Point your repository settings to serve from the **root** so the site loads under `https://<username>.github.io/MotionCraft/`.
+The `docs/index.md` file is a ready-made landing page for GitHub Pages. Point your repository settings to serve from the `docs/` directory to share MotionCraft documentation publicly.
 
 ---
 
