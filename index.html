@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotionCraft | Unified AI Video Engine</title>
+  <style>
+    :root {
+      --bg: #0c1117;
+      --panel: #0f1724;
+      --accent: #7dd3fc;
+      --accent-strong: #38bdf8;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(255,255,255,0.08);
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: radial-gradient(circle at 20% 20%, rgba(56,189,248,0.07), transparent 30%),
+                        radial-gradient(circle at 80% 0%, rgba(129,140,248,0.07), transparent 30%),
+                        var(--bg); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-strong); }
+    header { padding: 56px 24px 32px; text-align: center; max-width: 960px; margin: 0 auto; }
+    .tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(124,58,237,0.1); color: #c4b5fd; border: 1px solid var(--border); font-weight: 600; letter-spacing: 0.01em; }
+    h1 { margin: 18px 0 12px; font-size: 48px; letter-spacing: -0.03em; }
+    p.lead { margin: 0 auto; max-width: 720px; color: var(--muted); font-size: 18px; line-height: 1.6; }
+    .cta { margin-top: 28px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .button { padding: 13px 18px; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(168,85,247,0.15)); color: #e0f2fe; font-weight: 700; letter-spacing: 0.01em; }
+    .button.secondary { background: rgba(255,255,255,0.02); color: var(--text); }
+    main { max-width: 1100px; margin: 0 auto; padding: 0 24px 72px; display: grid; gap: 24px; }
+    section { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 22px; box-shadow: 0 10px 40px rgba(0,0,0,0.25); }
+    section h2 { margin-top: 0; letter-spacing: -0.02em; }
+    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { border: 1px solid var(--border); background: rgba(255,255,255,0.02); border-radius: 12px; padding: 14px 16px; }
+    .card h3 { margin: 6px 0; font-size: 18px; }
+    .muted { color: var(--muted); }
+    ul { margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.55; }
+    .providers { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+    .pill { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.04); color: var(--text); font-weight: 600; letter-spacing: 0.01em; }
+    footer { text-align: center; color: var(--muted); font-size: 14px; padding: 12px 0 32px; }
+    @media (max-width: 600px) {
+      h1 { font-size: 34px; }
+      header { padding-top: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="tag">MotionCraft · AI Video Orchestration</div>
+    <h1>Unified control for multi-model video generation</h1>
+    <p class="lead">Coordinate projects, shots, and render jobs across Pika, Runway, Luma, and Kling from a single hub. MotionCraft gives you a consistent control plane instead of juggling siloed tools.</p>
+    <div class="cta">
+      <a class="button" href="docs/OVERVIEW.md">Read the overview</a>
+      <a class="button secondary" href="docs/">Browse docs</a>
+      <a class="button secondary" href="https://github.com/anlominus/MotionCraft">View on GitHub</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Quick start</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1) Clone & explore</h3>
+          <ul>
+            <li>Review domain models in <code>server/src/core/models.ts</code>.</li>
+            <li>See orchestration logic in <code>server/src/core/engine.ts</code>.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>2) Configure providers</h3>
+          <ul>
+            <li>Copy <code>.env.example</code> → <code>.env</code> and add Pika/Runway/Luma/Kling keys.</li>
+            <li>Align payloads with the adapter stubs in <code>server/src/providers</code>.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>3) Shape the UI</h3>
+          <ul>
+            <li>Edit the React shell at <code>web/src/pages/index.tsx</code>.</li>
+            <li>Style components via <code>web/src/styles/base.css</code>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What you get</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Unified schema</h3>
+          <p class="muted">Projects, shots, and render jobs share one contract, so providers stay interchangeable.</p>
+        </div>
+        <div class="card">
+          <h3>Adapter stubs</h3>
+          <p class="muted">Start from payload-ready helpers for each provider, then swap in real SDK calls.</p>
+        </div>
+        <div class="card">
+          <h3>Docs-first launch</h3>
+          <p class="muted">GitHub Pages-ready landing plus deep links to provider matrices and prompt templates.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Providers</h2>
+      <div class="providers">
+        <span class="pill">Pika</span>
+        <span class="pill">Runway</span>
+        <span class="pill">Luma</span>
+        <span class="pill">Kling</span>
+      </div>
+      <p class="muted" style="margin-top:12px;">Extendable to future models with the same render job contract.</p>
+    </section>
+
+    <section>
+      <h2>Resources</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Docs home</h3>
+          <p class="muted">Start with the landing page and navigation links inside <code>docs/index.md</code>.</p>
+          <p><a href="docs/">Open docs →</a></p>
+        </div>
+        <div class="card">
+          <h3>Provider matrix</h3>
+          <p class="muted">Capabilities and payload notes for each provider.</p>
+          <p><a href="docs/PROVIDERS.md">Read matrix →</a></p>
+        </div>
+        <div class="card">
+          <h3>Prompt templates</h3>
+          <p class="muted">Kickstart shots with reusable prompt scaffolds.</p>
+          <p><a href="docs/PROMPT_TEMPLATES.md">See templates →</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Built for GitHub Pages · Point your site source to the repository root to load this page.
+  </footer>
+</body>
+</html>
