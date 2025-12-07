@@ -1,0 +1,13 @@
+{
+  "name": "motioncraft-server",
+  "version": "0.0.1",
+  "description": "Domain models and provider adapters for MotionCraft.",
+  "type": "module",
+  "scripts": {
+    "lint": "echo \"Add ESLint or Biome here\"",
+    "test": "echo \"Add tests here\""
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

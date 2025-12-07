@@ -1,14 +1,14 @@
 # 🎬 MotionCraft – Unified AI Video Engine (v0.0.1)
 
-> MotionCraft (MC) – Motion + Craft  
+> MotionCraft (MC) – Motion + Craft
 > Unified orchestration layer for AI video generation: Projects, Shots and multi-provider rendering (Pika, Runway, Luma, Kling & more).
 
 ---
 
 ## 📅 Meta
 
-- Generated: **Sunday, December 7, 2025**  
-- Hebrew Date: **י״ז בכסלו תשפ״ו (17 Kislev 5786)**  
+- Generated: **Sunday, December 7, 2025**
+- Hebrew Date: **י״ז בכסלו תשפ״ו (17 Kislev 5786)**
 - Time (IL): **~05:39 Asia/Jerusalem**
 
 ---
@@ -26,53 +26,59 @@ Instead of jumping between different platforms, MotionCraft talks to them all th
 
 ---
 
-## 🧱 Core Concepts
+## 🧱 Repository Layout (v0.0.1 Seed)
 
-- **Project**  
-  A logical collection of Shots.  
-  Example: `TikkunOlam-Visuals`, `ExitTheMatrix-Trailers`, `HacKingDJ-Visuals`.
-
-- **Shot**  
-  A single clip (e.g. 3–10 seconds) with a prompt, style, and provider.  
-  Example: `WF-02 Unity Charge`, `DH-01 First Signal`.
-
-- **Provider**  
-  The AI model that actually generates the video  
-  (Pika, Runway, Luma, Kling, etc.).
-
-- **RenderJob**  
-  One concrete rendering attempt for a Shot (V1, V2, UltraFX, Minimal, etc.).
-
----
-
-## 🗂️ Repository Layout (v0.0.1 Seed)
-
-This initial version focuses on structure and clear separation of concerns.
-
-```text
+```
 MotionCraft/
 ├─ README.md
 ├─ docs/
-│  ├─ OVERVIEW.md
-│  ├─ PROVIDERS.md
-│  └─ PROMPT_TEMPLATES.md
+│  ├─ index.md            # GitHub Pages landing page
+│  ├─ OVERVIEW.md         # Architecture and roadmap
+│  ├─ PROVIDERS.md        # Adapter matrix and how-to
+│  └─ PROMPT_TEMPLATES.md # Ready-to-use prompt scaffolds
 ├─ server/
-│  ├─ src/
-│  │  ├─ core/
-│  │  │  ├─ models.ts
-│  │  │  └─ engine.ts
-│  │  ├─ providers/
-│  │  │  ├─ pika.ts
-│  │  │  ├─ runway.ts
-│  │  │  ├─ luma.ts
-│  │  │  └─ kling.ts
-│  │  └─ api/
-│  │     └─ routes.ts
-│  └─ package.json
+│  ├─ package.json
+│  └─ src/
+│     ├─ core/
+│     │  ├─ models.ts     # Domain contracts for projects, shots, and render jobs
+│     │  └─ engine.ts     # In-memory orchestration engine
+│     ├─ providers/       # Provider adapters (Pika, Runway, Luma, Kling)
+│     └─ api/routes.ts    # Payload shapes for future HTTP routes
 ├─ web/
-│  ├─ src/
-│  │  ├─ pages/
-│  │  ├─ components/
-│  │  └─ styles/
-│  └─ package.json
-└─ .env.example
+│  ├─ package.json
+│  └─ src/
+│     ├─ components/      # UI building blocks
+│     ├─ pages/           # Landing page UI shell
+│     └─ styles/          # Base styling
+└─ .env.example           # Provider credentials template
+```
+
+---
+
+## 🚀 Quickstart
+
+1. Duplicate `.env.example` to `.env` and paste provider API keys.
+2. Explore `server/src/core` to see the engine and domain models.
+3. Review provider adapters in `server/src/providers` to map payloads for Pika, Runway, Luma, and Kling.
+4. Customize the UI shell in `web/src/pages/index.tsx` to match your workflow.
+5. Enable GitHub Pages with the repository root as the site source so `index.html` loads at `https://<username>.github.io/MotionCraft/`.
+
+---
+
+## 🌐 GitHub Pages
+
+The repository root now includes `index.html`, a ready-made landing page for GitHub Pages. Point your repository settings to serve from the **root** so the site loads under `https://<username>.github.io/MotionCraft/`.
+
+---
+
+## 📖 Additional Guides
+
+- [Overview](docs/OVERVIEW.md)
+- [Provider Matrix](docs/PROVIDERS.md)
+- [Prompt Templates](docs/PROMPT_TEMPLATES.md)
+
+---
+
+## 🤝 Contributing
+
+This is a seed repository. Feel free to expand adapters with real SDK calls, add persistence to the engine, and flesh out the UI with live data.
